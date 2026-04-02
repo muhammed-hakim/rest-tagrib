@@ -7,6 +7,13 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "cdn.sanity.io" },
     ],
   },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "styled-components": false,
+    }
+    return config
+  },
 }
 
 export default nextConfig
